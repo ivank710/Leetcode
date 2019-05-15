@@ -18,6 +18,5 @@ const isMirror = (leftNode, rightNode) => {
 }
 
 var isSymmetric = function (root) {
-
   return root === null || isMirror(root.left, root.right)
 };
