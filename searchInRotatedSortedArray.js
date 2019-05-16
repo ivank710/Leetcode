@@ -34,17 +34,18 @@ const search = (nums, target) => {
   while (lo <= hi) {
     let mid = Math.floor((lo + hi) / 2);
     if (target === nums[mid]) return mid;
-    if (nums[mid] <= nums[hi]) {
+
+    if (nums[mid] <= nums[hi]) {  //right half is sorted
       if (target > nums[mid] && target <= nums[hi]) {
-        lo = mid + 1;
+        lo = mid + 1; //search in right sorted half
       } else {
-        hi = mid - 1;
+        hi = mid - 1; //search left
       }
-    } else {
-      if (nums[lo] <= target && target < nums[mid]) {
+    } else {  //left half is sorted
+      if (target >= nums[lo] && target < nums[mid]) { //search in left sorted half
         hi = mid - 1;
       } else {
-        lo = mid + 1;
+        lo = mid + 1; //search right
       }
     }
   }
