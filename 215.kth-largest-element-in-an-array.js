@@ -83,19 +83,19 @@ class MaxHeap {
   }
 }
 
-// const findKthLargest = (nums, k) => {
-//   let sorted = nums.sort((a, b) => a - b);
-//   return sorted[nums.length - k];
-// }
+const findKthLargest = (nums, k) => {
+  let sorted = nums.sort((a, b) => a - b);
+  return sorted[nums.length - k];
+}
 
-// const findKthLargest = (nums, k) => { 
-//   let maxHeap = new MaxHeap();
-//   nums.forEach(num => maxHeap.insert(num));
-//   for (let i = 1; i < k; i++) maxHeap.deleteMax();
+const findKthLargest = (nums, k) => { 
+  let maxHeap = new MaxHeap();
+  nums.forEach(num => maxHeap.insert(num));
+  for (let i = 1; i < k; i++) maxHeap.deleteMax();
   
-//   return maxHeap.deleteMax();
-// }
+  return maxHeap.deleteMax();
+}
 
-var findKthLargest = function(nums, k) {
-};
+// var findKthLargest = function(nums, k) {
+// };
 
