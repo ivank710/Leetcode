@@ -85,6 +85,6 @@ var addTwoNumbers = function (l1, l2) {
 
   if (carry > 0) curr.next = new ListNode(carry);
 
-  return dummy.next
+  return dummy.next;
 };
 
