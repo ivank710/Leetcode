@@ -27,6 +27,8 @@ var threeSum = function(nums) {
         obj[key] = [num1, num2, num3];
         j += 1;
         k -= 1;
+        while (j < k && nums[j] == nums[j - 1]) j++;  // skip same result
+        while (j < k && nums[k] == nums[k + 1]) k--;  // skip same result
       } else if (num1 + num2 + num3 > 0) {
         k -= 1;
       } else {
