@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode id=21 lang=javascript
+ * @lc app=leetcode id=23 lang=javascript
  *
- * [21] Merge Two Sorted Lists
+ * [23] Merge k Sorted Lists
  */
 /**
  * Definition for singly-linked list.
@@ -11,11 +11,11 @@
  * }
  */
 /**
- * @param {ListNode} l1
- * @param {ListNode} l2
+ * @param {ListNode[]} lists
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
+
+var mergeTwoLists = function (l1, l2) {
   if (!l1) return l2;
   if (!l2) return l1;
 
@@ -50,6 +50,18 @@ var mergeTwoLists = function(l1, l2) {
     node.next = l1;
   }
 
-  return head;  
+  return head;
+};
+
+var mergeKLists = function(lists) {
+  if (lists.length === 0) return lists;
+
+  let resList = mergeTwoLists(lists.shift(), lists.shift());
+
+  while (lists.length) {
+    resList = mergeTwoLists(resList, lists.shift());
+  }
+
+  return resList;
 };
 
