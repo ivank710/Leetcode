@@ -7,7 +7,8 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function(nums, memo = {}) {
+
+ //MEMOIZATION
   // if (nums.length in memo) return memo[nums.length];
   // if (nums.length === 0) return 0;
 
@@ -15,6 +16,7 @@ var rob = function(nums, memo = {}) {
   // memo[nums.length] = Math.max(firstEl + rob(nums.slice(2), memo), rob(nums.slice(1), memo));
   // return memo[nums.length];
 
+var rob = function(nums, memo = {}) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
 
@@ -28,6 +30,6 @@ var rob = function(nums, memo = {}) {
     dp[i] = dp[i - 1] > val + dp[i - 2] ? dp[i - 1] : val + dp[i - 2]
   }
 
-  return dp[dp.length - 1]
+  return dp[dp.length - 1];
 };
 
