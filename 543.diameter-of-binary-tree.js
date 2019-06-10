@@ -15,21 +15,19 @@
  * @return {number}
  */
 var diameterOfBinaryTree = function(root) {
-  let diameter = 0;
+  if (!root) return 0;
 
-  dfs(root);
+  let leftHeight = getHeight(root.left);
+  let rightHeight = getHeight(root.right);
 
-  return diameter;
+  let leftDiameter = diameterOfBinaryTree(root.left);
+  let rightDiameter = diameterOfBinaryTree(root.right);
 
-  function dfs(node) {
-    if (!node) return 0;
-
-    const left = dfs(node.left);
-    const right = dfs(node.right);
-
-    diameter = Math.max(diameter, left + right);
-
-    return 1 + Math.max(left, right);
-  }
+  return Math.max(1 + leftHeight + rightHeight, Math.max(leftDiameter, rightDiameter));
 };
 
+const getHeight = root => {
+  if (!root) return 0;
+
+  return (1 + Math.max(getHeight(root.left), getHeight(root.right)));
+};

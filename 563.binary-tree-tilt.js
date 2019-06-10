@@ -25,7 +25,9 @@ var findTilt = function(root) {
   let left = findSum(root.left);
   let right = findSum(root.right);
   let rootTilt = Math.abs(left - right);
+  let leftTilt = findTilt(root.left);
+  let rightTilt = findTilt(root.right);
 
-  return rootTilt + findTilt(root.left) + findTilt(root.right);
+  return rootTilt + leftTilt + rightTilt;
 };
 

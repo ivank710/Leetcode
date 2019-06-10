@@ -18,7 +18,7 @@ var middleNode = function(head) {
   let runner = head;
   let walker = head;
 
-  while (runner !== null && runner.next !== null) {
+  while (runner && runner.next) {
     runner = runner.next.next;
     walker = walker.next;
   }
