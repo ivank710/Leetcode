@@ -12,11 +12,11 @@ const makeNums = nums => {
   let res = [];
 
   for (let i = 0; i < nums.length; i++) {
-    res.push(JSON.parse(nums[i]))
+    res.push(JSON.parse(nums[i]));
   }
 
   return res;
-}
+};
 
 var removeKdigits = function (num, k) {
   if (num.length === k) return "0";
@@ -36,15 +36,15 @@ var removeKdigits = function (num, k) {
     }
   }
 
-  if (k > 0) nums.splice(nums.length - (k), k)
+  if (k > 0) nums.splice(nums.length - (k), k);
 
   let zeroIdx = 0;
   while (nums[zeroIdx] < 1) {
     zeroIdx += 1;
   }
 
-  nums = nums.slice(zeroIdx)
-  let res = nums.join("")
+  nums = nums.slice(zeroIdx);
+  let res = nums.join("");
 
   return res === "" ? "0" : res;
 };
