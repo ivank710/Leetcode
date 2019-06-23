@@ -15,7 +15,7 @@ var groupAnagrams = function(strs) {
     if (curr.split("").sort().join("") in res) {
       res[curr.split("").sort().join("")].push(curr);
     } else {
-      res[curr.split("").sort().join("")] = [curr]
+      res[curr.split("").sort().join("")] = [curr];
     }
   }
 

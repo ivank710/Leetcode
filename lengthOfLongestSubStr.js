@@ -32,7 +32,7 @@ var lengthOfLongestSubstring = function (s) {
     }
 
     obj[s[i]] = i;
-    max = Math.max(max, i - j + 1)
+    max = Math.max(max, i - j + 1);
   }
 
   return max;

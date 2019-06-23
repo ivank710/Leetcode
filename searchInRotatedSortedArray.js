@@ -53,6 +53,3 @@ const search = (nums, target) => {
   return -1;
 }
 
-let arr = [4, 5, 6, 0, 1, 2]
-
-console.log(search(arr, 3));
