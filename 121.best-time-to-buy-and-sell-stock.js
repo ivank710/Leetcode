@@ -19,9 +19,9 @@ var maxProfit = function(prices) {
       min = curr;
     }
     let diff = curr - min;
-    dp[i] = Math.max(dp[i - 1], diff)
+    dp[i] = Math.max(dp[i - 1], diff);
   }
 
-  return dp[dp.length - 1]
+  return dp[dp.length - 1];
 };
 
