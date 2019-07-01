@@ -29,16 +29,19 @@ const permute = (nums) => {
   return res;
 };
 
-const backtrack = (nums, res, n = 0) => {
-  if (n === nums.length - 1) {
+//Need to fill positions one by one
+const backtrack = (nums, res, pos = 0) => {
+  if (pos === nums.length - 1) {
     res.push(nums.slice(0));
     return;
   }
 
-  for (let i = n; i < nums.length; i++) {
-    [nums[i], nums[n]] = [nums[n], nums[i]];
-    backtrack(nums, res, n + 1);
-    [nums[i], nums[n]] = [nums[n], nums[i]];
+  //To fill a pos, we need to know what are our choices
+  //Swap curr idx with choice idx (pos)
+  for (let i = pos; i < nums.length; i++) {
+    [nums[i], nums[pos]] = [nums[pos], nums[i]];    //take a choice and mark it as done for pos
+    backtrack(nums, res, pos + 1);
+    [nums[i], nums[pos]] = [nums[pos], nums[i]];    //backtracks
   }
 };
 
