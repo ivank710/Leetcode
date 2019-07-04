@@ -9,15 +9,16 @@
  */
 var subsets = function(nums) {
   if (nums.length === 0) return [[]];
+
   let res = [];
   let curr = nums.pop();
+  let subs = subsets(nums);
+  res = res.concat(subs);
 
-  let sub = subsets(nums);
-  res = res.concat(sub);
-  sub.forEach(ele => {
-    res.push(ele.concat(curr));
+  subs.forEach(sub => {
+    res.push(sub.concat(curr));
   });
-
+  
   return res;
 };
 
