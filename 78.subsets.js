@@ -30,12 +30,12 @@ var subsets = function(nums) {
 };
 
 const generateSubsets = (inputSet, idx, sub, res) => {
-  res.push(sub.slice(0));
+  res.push(sub.slice(0));   
 
   for (let i = idx; i < inputSet.length; i++) {
-    sub.push(inputSet[i]);
-    generateSubsets(inputSet, i + 1, sub, res);
-    sub.pop();
+    sub.push(inputSet[i]);  //include currNum in sub
+    generateSubsets(inputSet, i + 1, sub, res); //move on to next el
+    sub.pop();  //exclude currNum from sub and backtrack
   }
 
   return;
