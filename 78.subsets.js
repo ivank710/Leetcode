@@ -7,18 +7,37 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
-  if (nums.length === 0) return [[]];
+// var subsets = function(nums) {
+//   if (nums.length === 0) return [[]];
 
-  let res = [];
-  let curr = nums.pop();
-  let subs = subsets(nums);
-  res = res.concat(subs);
+//   let res = [];
+//   let curr = nums.pop();
+//   let subs = subsets(nums);
+//   res = res.concat(subs);
 
-  subs.forEach(sub => {
-    res.push(sub.concat(curr));
-  });
+//   subs.forEach(sub => {
+//     res.push(sub.concat(curr));
+//   });
   
+//   return res;
+// };
+
+var subsets = function(nums) {
+  let res = [];
+  let sub = [];
+  generateSubsets(nums, 0, sub, res);
   return res;
+};
+
+const generateSubsets = (inputSet, idx, sub, res) => {
+  res.push(sub.slice(0));
+
+  for (let i = idx; i < inputSet.length; i++) {
+    sub.push(inputSet[i]);
+    generateSubsets(inputSet, i + 1, sub, res);
+    sub.pop();
+  }
+
+  return;
 };
 
