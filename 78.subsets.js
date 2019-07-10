@@ -29,6 +29,7 @@ var subsets = function(nums) {
   return res;
 };
 
+//O(2^n)
 const generateSubsets = (inputSet, idx, sub, res) => {
   res.push(sub.slice(0));   
 

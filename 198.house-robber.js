@@ -16,7 +16,7 @@
   // memo[nums.length] = Math.max(firstEl + rob(nums.slice(2), memo), rob(nums.slice(1), memo));
   // return memo[nums.length];
 
-var rob = function(nums, memo = {}) {
+var rob = function(nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
 
