@@ -54,7 +54,7 @@ var mergeTwoLists = function (l1, l2) {
 };
 
 var mergeKLists = function(lists) {
-  if (lists.length === 0) return lists;
+  if (lists.length === 0) return null;
 
   let resList = mergeTwoLists(lists.shift(), lists.shift());
 
