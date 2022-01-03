@@ -13,4 +13,17 @@ def containsDuplicateDict(nums):
 
   return False
 
-containsDuplicateDict([1,2,3,5])
+
+def containsDuplicateSorted(nums):
+  nums.sort()
+  for i in range(1, len(nums)):
+    if nums[i] == nums[i - 1]:
+      print('TRUE')
+      return True
+
+  print('FALSE')
+  return False    
+
+
+containsDuplicateSorted([1, 2, 3, 1])
+containsDuplicateSorted([1,2,3,5])
